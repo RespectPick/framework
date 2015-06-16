@@ -1,0 +1,16 @@
+/*Navbar*/
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background:url("/calculator/assets/img/back.jpg");
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+.panel{
+	margin:20px 0px;
+}
+.footer{
+	padding:40px 20px;
+}

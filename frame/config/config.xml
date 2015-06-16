@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<config>
+	<db>
+		<dbname>imi_bd</dbname>		
+		<host>localhost</host>
+		<user>root</user>
+		<pass></pass>
+		<db_prefix>framework</db_prefix>
+	</db>	
+	<authinfo>
+		<sitename>
+			my_framework_ru
+		</sitename>	
+	</authinfo>	
+</config>

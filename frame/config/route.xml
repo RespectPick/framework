@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<routes>	
+	<!-- Пример команды
+	   <route url="SomeUrl"> SomeUrl - УРЛ который принимает браузер (без параметров GET)
+		<command>DefaultCommand</command> Команда - обработчик из /application/command		
+		<view>index</view> tpl - файл который отображает "середину"
+		<onlyMainView>1</onlyMainView> - указываем если не нужно подгружать хидер и футер шаблона
+		<css>signin</css> - указываем css файл если он не дефолтный
+		<smarty>1</smarty> - указываем если не нужно подключать смарти
+		<db>1</db> - указываем если не нужно подключать базу данных
+		<session>1</session> - указываем если не нужно подключать сессии
+	   </route> 	
+	-->	
+	<!--Вывод формы авторизации, по дефолту
+	<route url="default">
+		<command>DefaultCommand</command>		
+		<view>loginPage</view>
+		<onlyMainView>1</onlyMainView>
+		<css>signin</css>
+	</route>-->
+    <route url="default">
+		<command>DefaultCommand</command>		
+		<view>loginPage</view>
+		<onlyMainView>1</onlyMainView>                                           
+        </route>
+	<!--Обработка формы авторизации-->	
+	<route url="auth">
+		<command>LoginProcess</command>		
+		<smarty>1</smarty>
+	</route>
+	<!-- Команда на выход из системы-->
+	<route url="logOut">
+		<command>LogOut</command>		
+		<smarty>1</smarty>
+		<db>1</db>
+	</route>
+	<!--Личный кабинет-->
+	<route url="cabinet">
+		<command>ShowCabinet</command>
+		<view>cabinet</view>		
+	</route>
+	
+	<!--Таблица рейтинга-->
+	<route url="events">
+		<command>TableEvent</command>
+		<view>tableEvent</view>	
+		<onlyMainView>1</onlyMainView>
+	</route>
+	<!--форма для таблицы рейтига-->
+	<route url="formstudent">
+		<command>FormStudent</command>
+		<view>formAddStudent</view>	
+		<onlyMainView>1</onlyMainView>
+	</route>
+	<!--Обработчик формы рейтинга-->
+	<route url="formstudentsuccess">
+		<command>FormStudentSuccess</command>
+		<smarty>1</smarty>
+	</route>
+    
+   	<!--Обработчик удаления студента-->
+	<route url="tabledelete">
+		<command>TableDelete</command>
+		<smarty>1</smarty>
+	</route>
+    	<!--форма для  эвента-->
+	<route url="formevent">
+		<command>FormEvent</command>
+		<view>formAddEvent</view>	
+		<onlyMainView>1</onlyMainView>
+	</route>
+        	<!--обработчик для добавления и изменения эвента-->
+	<route url="formeventsuccess">
+		<command>FormEventSuccess</command>
+        <smarty>1</smarty>
+	</route>
+    
+       	<!--Обработчик удаления эвента-->
+	<route url="eventdelete">
+		<command>EventDelete</command>
+		<smarty>1</smarty>
+	</route>
+    
+    
+   	<!--Пользовательская часть-->
+	<route url="tablerating">
+		<command>TableEvent</command>
+        <view>tableRating</view>
+        <onlyMainView>1</onlyMainView>
+
+	</route>
+    
+       	<!--Админская часть-->
+	<route url="admin">
+		<command>AdminCommand</command>
+        <view>adminCommand</view>
+        <onlyMainView>1</onlyMainView>
+	</route>
+    
+	<route url="adminstud">
+		<command>AdminStud</command>
+        <view>adminStud</view>
+        <onlyMainView>1</onlyMainView>
+	</route>
+    <!-- передача id эвента для начисления баллов-->
+    <route url="admineventform">
+		<command>AdminEventForm</command>
+        <onlyMainView>1</onlyMainView>
+        <smarty>1</smarty>
+	</route>		
+    
+       <route url="adminstudentpoint">
+		<command>AdminStudentPoint</command>
+        <onlyMainView>1</onlyMainView>
+        <smarty>1</smarty>
+	   </route>
+       
+       <!--Добавление баллов обработчик-->
+       <route url="addpoints">
+		<command>AddPoints</command>
+        <onlyMainView>1</onlyMainView>
+        <smarty>1</smarty>
+	   </route>
+       
+       <!--Добавление нового типа события-->
+       <route url="addeventtype">
+		<command>AddEventType</command>
+        <onlyMainView>1</onlyMainView>
+        <smarty>1</smarty>
+	   </route>
+       <!--Добавление новой группы-->
+       <route url="addgroupnumber">
+		<command>AddGroupNumber</command>
+        <onlyMainView>1</onlyMainView>
+        <smarty>1</smarty>
+	   </route>
+       <!--передача студента для изменения в модалку-->
+       <route url="adminstudform">
+		<command>AdminStudForm</command>
+        <onlyMainView>1</onlyMainView>
+        <smarty>1</smarty>
+	   </route>
+       <!--модалка истории-->
+         <route url="adminhistory">
+		<command>AdminHistory</command>
+        <onlyMainView>1</onlyMainView>
+        <smarty>1</smarty>
+	   </route>
+       <!--выбор эвента для истории в модалке-->
+        <route url="eventhistory">
+    		<command>EventHistory</command>
+            <onlyMainView>1</onlyMainView>
+            <smarty>1</smarty>
+        </route>
+            <!-- передача id студента для списания баллов-->
+        <route url="adminstudpointsall">
+    		<command>AdminStudPointsAll</command>
+            <onlyMainView>1</onlyMainView>
+            <smarty>1</smarty>
+	   </route>
+       <!--списание баллов-->
+       <route url="deletepointsall">
+    		<command>DeletePointsAll</command>
+            <onlyMainView>1</onlyMainView>
+            <smarty>1</smarty>
+	   </route>
+        <!--итория списания баллов-->
+       <route url="eventhistoryall">
+    		<command>EventHistoryAll</command>
+            <onlyMainView>1</onlyMainView>
+            <smarty>1</smarty>
+	   </route>
+       <!--удаление группы-->
+       <route url="deletegroup">
+    		<command>DeleteGroup</command>
+            <onlyMainView>1</onlyMainView>
+            <smarty>1</smarty>
+	   </route>
+    <!--Повышение курса для всех студентов-->
+       <route url="upgroup">
+    		<command>UpGroup</command>
+            <onlyMainView>1</onlyMainView>
+            <smarty>1</smarty>
+	   </route>
+       
+       <route url="addexcelfile">
+    		<command>AddExcelFile</command>
+            <onlyMainView>1</onlyMainView>
+            <smarty>1</smarty>
+	   </route>
+              <route url="addcsvfile">
+    		<command>AddCsvFile</command>
+            <onlyMainView>1</onlyMainView>
+            <smarty>1</smarty>
+	   </route>
+</routes>	
